@@ -13,6 +13,7 @@
   "homepage": "https://github.com/maomao1996/code-analysis#readme",
   "author": "maomao <1714487678@qq.com>",
   "scripts": {
+    "start": "pnpm --filter='react-v18.2.0' start",
     "lint": "prettier --write ."
   },
   "devDependencies": {

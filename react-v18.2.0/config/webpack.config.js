@@ -296,13 +296,18 @@ module.exports = function (webpackEnv) {
       alias: {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-        'react-native': 'react-native-web',
+        // 'react-native': 'react-native-web',
         // Allows for better profiling with ReactDevTools
-        ...(isEnvProductionProfile && {
-          'react-dom$': 'react-dom/profiling',
-          'scheduler/tracing': 'scheduler/tracing-profiling'
-        }),
-        ...(modules.webpackAliases || {})
+        // ...(isEnvProductionProfile && {
+        //   'react-dom$': 'react-dom/profiling',
+        //   'scheduler/tracing': 'scheduler/tracing-profiling'
+        // }),
+        // ...(modules.webpackAliases || {})
+        react: path.resolve(paths.appSrc, 'react/packages/react'),
+        'react-dom': path.resolve(paths.appSrc, 'react/packages/react-dom'),
+        'react-reconciler': path.resolve(paths.appSrc, 'react/packages/react-reconciler'),
+        shared: path.resolve(paths.appSrc, 'react/packages/shared'),
+        scheduler: path.resolve(paths.appSrc, 'react/packages/scheduler')
       },
       plugins: [
         // Prevents users from importing files from outside of src/ (or node_modules/).
