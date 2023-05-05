@@ -1,0 +1,23 @@
+{
+  "name": "code-analysis",
+  "version": "1.0.0",
+  "description": "记录各种源码学习",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maomao1996/code-analysis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maomao1996/code-analysis/issues"
+  },
+  "homepage": "https://github.com/maomao1996/code-analysis#readme",
+  "author": "maomao <1714487678@qq.com>",
+  "scripts": {
+    "lint": "prettier --write ."
+  },
+  "devDependencies": {
+    "@femm/prettier": "^1.0.2",
+    "prettier": "^2.8.8"
+  },
+  "prettier": "@femm/prettier"
+}
