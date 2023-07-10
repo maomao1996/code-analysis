@@ -16,7 +16,7 @@ const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath)
 const publicUrlOrPath = getPublicUrlOrPath(
   process.env.NODE_ENV === 'development',
   require(resolveApp('package.json')).homepage,
-  process.env.PUBLIC_URL
+  process.env.PUBLIC_URL,
 )
 
 const buildPath = process.env.BUILD_PATH || 'build'
@@ -32,13 +32,13 @@ const moduleFileExtensions = [
   'tsx',
   'json',
   'web.jsx',
-  'jsx'
+  'jsx',
 ]
 
 // Resolve file paths in the same order as webpack
 const resolveModule = (resolveFn, filePath) => {
   const extension = moduleFileExtensions.find((extension) =>
-    fs.existsSync(resolveFn(`${filePath}.${extension}`))
+    fs.existsSync(resolveFn(`${filePath}.${extension}`)),
   )
 
   if (extension) {
@@ -67,7 +67,7 @@ module.exports = {
   appWebpackCache: resolveApp('node_modules/.cache'),
   appTsBuildInfoFile: resolveApp('node_modules/.cache/tsconfig.tsbuildinfo'),
   swSrc: resolveModule(resolveApp, 'src/service-worker'),
-  publicUrlOrPath
+  publicUrlOrPath,
 }
 
 module.exports.moduleFileExtensions = moduleFileExtensions

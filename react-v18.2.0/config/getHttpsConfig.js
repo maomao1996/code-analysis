@@ -28,8 +28,8 @@ function readEnvFile(file, type) {
   if (!fs.existsSync(file)) {
     throw new Error(
       `You specified ${chalk.cyan(type)} in your env, but the file "${chalk.yellow(
-        file
-      )}" can't be found.`
+        file,
+      )}" can't be found.`,
     )
   }
   return fs.readFileSync(file)
@@ -46,7 +46,7 @@ function getHttpsConfig() {
     const keyFile = path.resolve(paths.appPath, SSL_KEY_FILE)
     const config = {
       cert: readEnvFile(crtFile, 'SSL_CRT_FILE'),
-      key: readEnvFile(keyFile, 'SSL_KEY_FILE')
+      key: readEnvFile(keyFile, 'SSL_KEY_FILE'),
     }
 
     validateKeyAndCerts({ ...config, keyFile, crtFile })

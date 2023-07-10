@@ -22,7 +22,7 @@ const {
   choosePort,
   createCompiler,
   prepareProxy,
-  prepareUrls
+  prepareUrls,
 } = require('react-dev-utils/WebpackDevServerUtils')
 const openBrowser = require('react-dev-utils/openBrowser')
 const semver = require('semver')
@@ -49,9 +49,9 @@ if (process.env.HOST) {
   console.log(
     chalk.cyan(
       `Attempting to bind to HOST environment variable: ${chalk.yellow(
-        chalk.bold(process.env.HOST)
-      )}`
-    )
+        chalk.bold(process.env.HOST),
+      )}`,
+    ),
   )
   console.log(`If this was unintentional, check that you haven't mistakenly set it in your shell.`)
   console.log(`Learn more here: ${chalk.yellow('https://cra.link/advanced-config')}`)
@@ -86,7 +86,7 @@ checkBrowsers(paths.appPath, isInteractive)
       urls,
       useYarn,
       useTypeScript,
-      webpack
+      webpack,
     })
     // Load proxy config
     const proxySetting = require(paths.appPackageJson).proxy
@@ -95,7 +95,7 @@ checkBrowsers(paths.appPath, isInteractive)
     const serverConfig = {
       ...createDevServerConfig(proxyConfig, urls.lanUrlForConfig),
       host: HOST,
-      port
+      port,
     }
     const devServer = new WebpackDevServer(serverConfig, compiler)
     // Launch WebpackDevServer.
@@ -107,8 +107,8 @@ checkBrowsers(paths.appPath, isInteractive)
       if (env.raw.FAST_REFRESH && semver.lt(react.version, '16.10.0')) {
         console.log(
           chalk.yellow(
-            `Fast Refresh requires React 16.10 or higher. You are using React ${react.version}.`
-          )
+            `Fast Refresh requires React 16.10 or higher. You are using React ${react.version}.`,
+          ),
         )
       }
 
