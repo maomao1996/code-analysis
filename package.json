@@ -17,7 +17,7 @@
     "lint": "prettier --write ."
   },
   "devDependencies": {
-    "@femm/prettier": "^1.0.2",
+    "@femm/prettier": "^1.1.0",
     "prettier": "^2.8.8"
   },
   "prettier": "@femm/prettier"
